@@ -1,17 +1,22 @@
 def moveZeros(ListInput):
     # find the number of zeros in the list and remove them
-    #  count = 0
-    size = len(ListInput)
     nxt = 0
     for x in ListInput:
        if x != 0:
           ListInput[nxt] = x
-          nxt += 1
+          nxt += 1 # counter to get the pointer at which to start placing 0's
 
-    x = nxt
+    x = nxt # getting the location to insert value 0
+
     for i in range(len(ListInput[nxt:])):
-        ListInput[x] = 0
-        x+=1
+        """
+        ListInput[nxt:] : gets the element starting from 'nxt' until the last element
+        len(ListInput[nxt:]) : gets the total number of elements from the 'list'
+        range(len(ListInput[nxt:])) : gets the range between 0 and ListInput[nxt:]
+        """
+
+        ListInput[x] = 0 # Using the last position from where to iterate and replace all the values to 0
+        x+=1 # increment to one position at a time
 
     print(ListInput)
 
