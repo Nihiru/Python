@@ -15,18 +15,36 @@ def CountElements(InputList):
     #         count+=1
     # print(count)
 
-    # Approach 2: for large number of lists
+    # Approach 2: hashing
     # use map to count the occurences of a number in the list and add it to the map
-    InputList.sort()
-    occur_dict = {}
-    for ele in InputList:
-        occur_dict[ele] = InputList.count(ele)
+    # InputList.sort()
+    # occur_dict = {}
+    # for ele in InputList:
+    #     occur_dict[ele] = InputList.count(ele)
 
     # check element 'x + 1' exists for each element 'x'
-    for key, value in occur_dict.items():
-        if(key +1 in InputList):
-            count += occur_dict[key] # 6 + 9 + 7 + 6
-    print(count)
-# CountElements([1,1,2,2])
+    # for key, value in occur_dict.items():
+    #     if(key +1 in InputList):
+    #         count += occur_dict[key] # 6 + 9 + 7 + 6
 
+
+
+    # Approach 3: Pro
+    answer = 0 
+    previous = -1
+    previous_count = 0
+    for x in InputList: # O(N)
+        if( x == previous ): # for performing bulk operations and reduce the running time
+            previous_count += 1
+        else:
+            if(x == previous + 1):
+                answer += previous_count # finding the 'x + 1' occurences 
+            previous = x 
+            previous_count = 1 # Reset the count of occurrences for each number 
+    print(answer)
+
+
+
+CountElements([1,1,2,2])
+CountElements([4,4,4,4,4,5,5,5,5,6,6,6,8,8,9])
 CountElements([4,4,4,4,4,4,5,5,5,5,5,5,5,5,5,6,6,6,6,6,6,6,7,7,7,7,7,7,8,11])
