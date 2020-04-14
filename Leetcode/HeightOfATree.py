@@ -3,15 +3,21 @@ class TreeNode:
         self.val = x
         self.left = None
         self.right = None
-    def diameterOfBinaryTree(self,root):
-        if root == None:
-            return 0
-        left = self.diameterOfBinaryTree(root.left)
-        right = self.diameterOfBinaryTree(root.right)
-        lef_max = max(left.right, left.right)
-        right_max = max(right.right, right.right)
-        diam = max(lef_max, right_max)
-        return diam+1
+def height(node):
+    if node is None:
+        return 0
+    return 1 + max(height(node.left), height(node.right))
+def diameterOfBinaryTree(self,root):
+    if root == None:
+        return 0
+    
+    lheight = height(root.left)
+    rheight = height(root.right)
+
+    ldiameter = diameterOfBinaryTree(root.left)
+    rdiameter = diameterOfBinaryTree(root.right)
+    
+    return max(lheight + rheight + 1, max(ldiameter, rdiameter))
 
 
 
