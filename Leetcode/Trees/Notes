@@ -1,0 +1,10 @@
+# Trees
+
+:Binary Search Tree 
+    :Is a node-based binary tree
+    :Left subtree of a node contains only nodes with keys lesser than the node's key
+    :Right subtree of a node contains only nodes with keys greater than the node's key
+    :Search, minimum, maximum can be done very fast due to ordering
+    :Search space will be reduced from "n" to (n/2), (n/4), (n/8)...
+    :BSTs functionality is similar to Binary Search 
+
