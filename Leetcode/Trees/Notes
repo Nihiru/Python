@@ -1,10 +1,34 @@
-# Trees
+:Trees
+    :Trees are hierarchical data structure
+    :Elements with no children are called "leaves"
+    :Faster access and search
+    :Tree traversals are inorder(left, root, right), preorder(root, left, right), postorder(left, right, root)
+    :Time complexity is
 
-:Binary Search Tree 
-    :Is a node-based binary tree
-    :Left subtree of a node contains only nodes with keys lesser than the node's key
-    :Right subtree of a node contains only nodes with keys greater than the node's key
-    :Search, minimum, maximum can be done very fast due to ordering
-    :Search space will be reduced from "n" to (n/2), (n/4), (n/8)...
-    :BSTs functionality is similar to Binary Search 
+        Case 1: Skewed tree(one of the subtrees is empty and other subtree is non-empty)
+            T(n) = T(k) + T(n-k-1) + c where k is the number of nodes on one side and n-k-1 on the other side
+            T(n) = nT(0) + n(c)... Value of T(0) will be some constant
+            T(n) = n(c+d)
+            T(n) = Θ(n)
 
+        Case 2: Having equal number of nodes on both sides
+            T(n) = 2T(|_n/2_|) + c
+
+
+    :Binary Tree
+        :Tree having at most 2 children
+
+
+    :Binary Search Tree 
+        :Is a node-based binary tree
+        :Left subtree of a node contains only nodes with keys lesser than the node's key
+        :Right subtree of a node contains only nodes with keys greater than the node's key
+        :Search, minimum, maximum can be done very fast due to ordering
+        :Search space will be reduced from "n" to (n/2), (n/4), (n/8)...
+        :BSTs functionality is similar to Binary Search
+        :Worst-Case time complexity of search and insert operations is O(h)
+        :Inorder traversal of the tree returns the output in sorted order 
+
+    :Breadth-First traversal
+        :Level Order traversal is Breadth-Order traversal of the tree
+        
