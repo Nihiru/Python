@@ -1,0 +1,9 @@
+:make sure you have activated your python environment
+
+:For unittest-TestCase
+    :start the server 'python manage.py runserver'
+    :run the application file 'python filename.py'
+    :this is an automated test-runner
+
+:For django-test
+    :run 'python manage.py test'
