@@ -36,14 +36,18 @@ def buildTree(inOrder, preOrder, inStrt, inEnd):
         return tNode
     
     # get the inIndex from InOrder
-    inIndex = search(inOrder, inStrt, inEnd, tNode.data)
+    # inIndex = search(inOrder, inStrt, inEnd, tNode.data)
+
+    # return index
+    inIndex = InOrderMap.get(tNode.data, -1)
 
     # using index in InOrder Traversal, construct left and right subtrees
     tNode.left = buildTree(inOrder, preOrder, inStrt, inIndex-1)
     tNode.right = buildTree(inOrder, preOrder, inIndex+1, inEnd)
 
     return tNode
-    
+
+# optimization can be done 
 def search(arr, start, end, value):
     for i in range(start, end + 1):
         if arr[i] == value:
@@ -59,9 +63,19 @@ def printInOrder(node):
 
     printInOrder(node.right)
 
+def populate():
+    '''
+    save the index of InOrder into a dictonary
+    '''
+    for i in range(0, len(inOrder)):
+        InOrderMap[inOrder[i]] = i
+
+
 inOrder = ['D', 'B', 'E', 'A', 'F', 'C']
 preOrder = ['A', 'B', 'D', 'E', 'C', 'F']
 
+InOrderMap = {}
+populate()
 buildTree.preIndex = 0
 root = buildTree(inOrder,preOrder, 0, len(inOrder)-1)
 
