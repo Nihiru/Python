@@ -1,3 +1,17 @@
+"""
+Logic
+:(x + y + z) = target
+:Taking the first element as x from the list
+:Traversing from x+1 till the end to find the sum of 2 numbers
+
+Complexity
+:Time Complexity = O(n^2) 
+    :Justification - Implementation of 2 loops
+:Space Complexity = O(1)
+    :Justification - No extra space is needed
+"""
+
+
 def ThreeNumberSum(data, target):
     for x in range(0, len(data) - 1):
         s = set()
