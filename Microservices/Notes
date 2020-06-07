@@ -1,0 +1,20 @@
+:Microservices
+    :An application is divided into a set of loosely coupled, collaborating services.
+    :Each service would include
+        :Highly maintainable and testable
+        :Loosely coupled with other services
+        :Independently deployable
+        :Capable of being developed by a small team
+    :Communication between these services using either synchronous protocols such as HTTP/REST or asynchronous protocols
+        such as AMQP
+    :These services would have independent Databases[1]
+    :Data consistency between services is maintaned using saga pattern[2]
+    :Services must be loosely coupled so that they can be developed, deployed and scaled Independently
+
+
+:Extensions
+[1]Database as a service
+    :Services need to persist data in some kind of database.
+    :
+
+[2]Saga pattern
