@@ -19,12 +19,12 @@
     :Iteratively
             :Average Case
             :Time - O(log(N)) where N is number of nodes in the tree
-            :Space -  O(log(N)) 
-                :Justification - Number of frames created for each recursive call and the memory consumption
+            :Space -  O(1) 
+                :Justification - No additional call is made; Only a temporary variable is being used
         :Worst Case
             :Time - O(N)
                 :Justification - Traversing the entire sub-tree when an element is not found
-            :Space - O(N)
+            :Space - O(1)
 
 """
 
