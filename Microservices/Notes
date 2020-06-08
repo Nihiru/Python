@@ -15,6 +15,14 @@
 :Extensions
 [1]Database as a service
     :Services need to persist data in some kind of database.
-    :
-
+    :Each service can use the type of database that is best suited to its needs.
+        :In terms of relational database
+            :Private-tables-per-service - each service owns set of tables that must only be accessed by that service
+            :Schema-per-service - each service has a database schema that's private to that service
+            :Database-server-per-service - each service has it's own database server.
+    :Drawbacks
+        :Complexity of managing multiple SQL and NoSQL Databases
+        :Implementing queries that join data that is now in multiple databses is challenging
+        :Implementing business transactions that span multiple services is not straightforward. Distributed transactions
+         are best avoided because of CAP theorem
 [2]Saga pattern
